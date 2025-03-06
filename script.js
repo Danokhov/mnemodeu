@@ -146,7 +146,7 @@ function filterDropdown() {
 }
 
 // 🔹 Функция показа всплывающего окна
-function showPopup(word, translation, description) {
+function showPopup(word, translation, gender, mnemo) {
     let popup = document.getElementById("popup");
     if (!popup) {
         console.error("Ошибка: 'popup' не найден!");
@@ -154,8 +154,8 @@ function showPopup(word, translation, description) {
     }
 
     document.getElementById("popupWord").innerText = word;
-    document.getElementById("popupTranslation").innerText = translation;
     document.getElementById("popupGender").innerText = gender;
+    document.getElementById("popupTranslation").innerText = translation;
     document.getElementById("popupMnemo").innerText = mnemo;
     popup.style.display = "block";
 }
