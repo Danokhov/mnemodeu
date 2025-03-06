@@ -126,7 +126,7 @@ function filterDropdown() {
             let wordItem = document.createElement("div");
             wordItem.className = "dropdown-item";
             wordItem.textContent = item.word;
-            wordItem.textContent = item.gender;
+            wordItem.dataset.gender = item.gender;
             wordItem.dataset.translation = item.translation;
             wordItem.dataset.mnemo = item.mnemo ? item.mnemo : "Нет мнемоники";
 
