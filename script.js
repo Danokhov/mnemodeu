@@ -158,6 +158,38 @@ function closePopup() {
         popup.style.display = "none";
     }
 }
+import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+// 🔹 Функция сброса пароля
+function resetPassword() {
+    let email = document.getElementById("email").value;
+    if (!email) {
+        alert("Введите ваш email!");
+        return;
+    }
+
+    const auth = getAuth();
+    sendPasswordResetEmail(auth, email)
+        .then(() => {
+            alert("📩 Ссылка для сброса пароля отправлена на " + email);
+        })
+        .catch((error) => {
+            console.error("Ошибка сброса пароля:", error.message);
+            alert("❌ Ошибка: " + error.message);
+        });
+}
+
+// 🔹 Добавляем обработчик на кнопку
+document.addEventListener("DOMContentLoaded", function() {
+    let resetBtn = document.getElementById("resetPasswordBtn");
+    if (resetBtn) {
+        resetBtn.addEventListener("click", resetPassword);
+    }
+});
+
+// Делаем функцию глобальной
+window.resetPassword = resetPassword;
+
 
 // Делаем функции глобальными
 window.filterDropdown = filterDropdown;
