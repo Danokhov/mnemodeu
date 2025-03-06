@@ -146,7 +146,7 @@ function filterDropdown() {
 }
 
 // 🔹 Функция показа всплывающего окна
-function showPopup(word, translation, gender, mnemo) {
+function showPopup(word, gender, translation, mnemo) {
     let popup = document.getElementById("popup");
     if (!popup) {
         console.error("Ошибка: 'popup' не найден!");
