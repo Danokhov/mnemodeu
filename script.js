@@ -126,13 +126,14 @@ function filterDropdown() {
             let wordItem = document.createElement("div");
             wordItem.className = "dropdown-item";
             wordItem.textContent = item.word;
+            wordItem.textContent = item.gender;
             wordItem.dataset.translation = item.translation;
             wordItem.dataset.mnemo = item.mnemo ? item.mnemo : "Нет мнемоники";
 
             // При клике выбираем слово и скрываем список
             wordItem.onclick = function () {
                 document.getElementById("searchInput").value = item.word;
-                showPopup(item.word, item.translation, item.mnemo);
+                showPopup(item.word, item.gender, item.translation, item.mnemo);
                 dropdown.style.display = "none";
             };
 
@@ -154,7 +155,8 @@ function showPopup(word, translation, description) {
 
     document.getElementById("popupWord").innerText = word;
     document.getElementById("popupTranslation").innerText = translation;
-    document.getElementById("popupDescription").innerText = description;
+    document.getElementById("popupGender").innerText = gender;
+    document.getElementById("popupMnemo").innerText = mnemo;
     popup.style.display = "block";
 }
 
