@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Словарь</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 🔹 Форма авторизации -->
+    <div id="login">
+        <h2>Вход</h2>
+        <input type="text" id="email" placeholder="Email"><br>
+        <input type="password" id="password" placeholder="Пароль"><br>
+        <button id="loginBtn">Войти</button>
+    </div>
+
+    <!-- 🔹 Выпадающий список слов -->
+    <div id="words" style="display:none;">
+        <h2>Словарь</h2>
+<input type="text" id="searchInput" placeholder="Введите слово..." onkeyup="filterDropdown()" onclick="showDropdown()">
+<div id="dropdown" class="dropdown-content"></div>
+</select>
+    </div>
+
+    <!-- 🔹 Всплывающее окно со значением слова -->
+    <div id="popup" style="display: none;">
+        <h3 id="popupWord"></h3>
+        <p><b>Перевод:</b> <span id="popupTranslation"></span></p>
+        <p><b>Описание:</b> <span id="popupDescription"></span></p>
+        <button onclick="closePopup()">Закрыть</button>
+    </div>
+
+    <!-- Подключаем JavaScript -->
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
